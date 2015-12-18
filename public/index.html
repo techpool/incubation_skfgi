@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>I N C U B A T I O N</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="http://materializecss.com/images/parallax1.jpg"></div>
+    </div>
+    <div class="section white">
+      <div id="test" class="row container">
+        <h2 class="header">Parallax</h2>
+        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+      </div>
+    </div>
+    <script src='reactScript/bundle.js'></script>
+    <script>
+        $(document).ready(function(){
+          $('.parallax').parallax();
+        });
+    </script>
+  </body>
+</html>

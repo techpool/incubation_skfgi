@@ -1,0 +1,17 @@
+.navbar{
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.navItems{
+  padding: 20px
+}
+
+body{
+  margin: 0px
+}
+
+.parallax-container {
+      height: 100vh;
+}
