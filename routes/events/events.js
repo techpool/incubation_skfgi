@@ -1,12 +1,9 @@
 module.exports = function(app) {
-    app.get('/register', function(req, res) {
-        res.send('Hey there, you need to register');
-    });
 
-    app.post('/register', function (req, res) {
+    app.post('/postevent', function (req, res) {
         var sendData = 'Thanks for registering with us';
 
-        var std = new Student({
+        var evt = new Event({
             name: req.body.name,
             wbutRoll: req.body.roll,
             email: req.body.email,

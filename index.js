@@ -8,12 +8,16 @@ require('./config/configuration.js')(app);
 
 /* Models */
 Student = require('./models/studentDetails.js');
+Event = require('./models/events.js');
 
 /* Routes for registration */
 
 require('./routes/registration/studentRegister.js')(app);
 require('./routes/registration/login.js')(app);
 
+/* Routes for events */
+
+require('./routes/events/events.js')(app);
 
 app.listen(8000, function () {
     console.log('Server started at port 8000');
