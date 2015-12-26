@@ -52,7 +52,7 @@ var NavigationComponent = React.createClass({
                       alert( "Unauthorized" );
                   },
                   200: function () {
-                      window.location = '/dashboard'
+                      window.location.href = '/dashboard'
                   },
                   400: function () {
                       alert("Something went wrong. Try again after sometimg. Sorry. :/");
@@ -94,7 +94,7 @@ var NavigationComponent = React.createClass({
                   <input id="password" type="password" className="validate" onkeypress={this.enterKeyHandle}/>
                 </div>
                 <div className="input-field col s12">
-                  <RaisedButton primary={true} label="Choose an Image" onClick={this.loginCall}>
+                  <RaisedButton primary={true} label="Login" onClick={this.loginCall}>
                   </RaisedButton>
                 </div>
               </div>

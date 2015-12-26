@@ -25345,7 +25345,12 @@ var NavigationComponent = React.createClass({
         401: function () {
           alert("Unauthorized");
         },
-        200: function () {}
+        200: function () {
+          window.location.href = '/dashboard';
+        },
+        400: function () {
+          alert("Something went wrong. Try again after sometimg. Sorry. :/");
+        }
       },
       timeout: 5000
     });
@@ -25412,7 +25417,7 @@ var NavigationComponent = React.createClass({
               React.createElement(
                 'div',
                 { className: 'input-field col s12' },
-                React.createElement(RaisedButton, { primary: true, label: 'Choose an Image', onClick: this.loginCall })
+                React.createElement(RaisedButton, { primary: true, label: 'Login', onClick: this.loginCall })
               )
             )
           )
