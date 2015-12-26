@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "^1.4.0",
+    "express-session": "^1.12.1",
+    "jade": "^1.11.0",
+    "kerberos": "0.0.17",
+    "react-tap-event-plugin": "^0.2.1"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
