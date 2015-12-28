@@ -1,6 +1,6 @@
 module.exports = function(app) {
     app.get('/register', function(req, res) {
-        res.send('Hey there, you need to register');
+        res.render('register');
     });
 
     app.post('/register', function (req, res) {

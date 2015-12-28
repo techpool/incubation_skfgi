@@ -28,7 +28,7 @@ module.exports = function (app) {
             'email': credential.email
 
           }, function (err, studentData) {
-                console.log(studentData);
+                // console.log(studentData);
                 if (err){
                     res.sendStatus(400);
                 } else {
