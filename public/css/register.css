@@ -1,0 +1,15 @@
+html{
+    min-height: 100%
+}
+body{
+    opacity: 1;
+    background-image: linear-gradient(to bottom, #70e1f5, #ffd194);
+}
+form{
+    -webkit-box-shadow: 0 0 7px 2px #737373;
+    box-shadow: 0 0 7px 2px #737373;
+    padding: 15px;
+    margin-top: 12vh;
+    background: white;
+    background-clip: padding-box;
+}
