@@ -6,7 +6,7 @@ var studentDetails = new Schema({
         type: 'String',
         required: true
     },
-    wbutRoll: {
+    roll: {
         type: Number,
         required: true,
         unique: true
