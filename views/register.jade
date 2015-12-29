@@ -1,39 +1,61 @@
 doctype html
 html
-  head
-    meta(charset='UTF-8')
-    title I N C U B A T I O N
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js')
-    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-    link(rel='stylesheet', type='text/css', href='css/register.css')
-  body
-    #navbar
-    script(src='reactScript/bundle.js')
-    .row
-        .col.s4
-            .row
-        .col.s4
-            form
-                .row
-                  .input-field.col.s6
-                    input#first_name.validate(type='text')
-                    label(for='first_name') First Name
-                  .input-field.col.s6
-                    input#last_name.validate(type='text')
-                    label(for='last_name') Last Name
-                .row
-                  .input-field.col.s12
-                    input#email.validate(type='email')
-                    label(for='email') Email
-                .row
-                  .input-field.col.s12
-                    input#password.validate(type='password')
-                    label(for='password') Password
-                .row
-                    button.btn.waves-effect.waves-light(type='submit', name='action')
-                          | Register
-                          i.material-icons.right send
-        .col.s4
-            .row
+	head
+		meta(charset='UTF-8')
+		title I N C U B A T I O N
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js')
+		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+		link(rel='stylesheet', type='text/css', href='css/register.css')
+		script(type='text/javascript').
+			$(document).ready(function() {
+				$('select').material_select();
+			});
+		link(rel='stylesheet', type='text/css', href='css/main.css')
+
+	body
+		#navbar
+		script(src='reactScript/bundle.js')
+		.row
+			.col.s4
+				.row
+			.col.s4
+				form(action='/register', method='post')
+					.row
+						.input-field.col.s12
+							input#username.validate(type='text', autocomplete='off', name='name')
+							label(for='username') Full Name
+						.input-field.col.s12
+							input#email.validate(type='email', autocomplete='off', name='email')
+							label(for='email') Email
+						.input-field.col.s12
+							input#password.validate(type='password', autocomplete='off', name='password')
+							label(for='password') Password
+						.input-field.col.s12
+							select(name='dept')
+								optgroup(label='Diploma')
+									option(value='D CE') Civil Engineering
+									option(value='D ME') Mechanical Engineering
+								optgroup(label='B.Tech')
+									option(value='B CSE') Computer Science Engineering
+									option(value='B ECE 1') Electronics and Communications Engineering 1
+									option(value='B ECE 2') Electronics and Communications Engineering 2
+									option(value='B AEIE') Applied Electronics and Instrumentation Engineering
+									option(value='B EE 1') Electrical Engineering 1
+									option(value='B EE 2') Electrical Engineering 2
+									option(value='B ME') Mechanical Engineering
+									option(value='B CE') Civil Engineering
+							label Department/Section
+						.input-field.col.s12
+							input#makautroll.validate(type='number', autocomplete='off', name='roll', min=0)
+							label(for='makautroll') M.K.A.U.T. Roll No.
+						.input-field.col.s12
+							input#year.validate(type='number', min='1', max='4', autocomplete='off', name='year')
+							label(for='year') Current Year
+						.input-field.col.s12
+							button.btn.waves-effect.waves-light(type='submit', name='action', formmethod='POST', formaction='/register')
+								| Register
+								i.material-icons.right send
+			.col.s4
+				.row
