@@ -1,0 +1,22 @@
+{
+  "name": "incubation",
+  "description": "MEAN stack website for college incubation club",
+  "main": "index.js",
+  "authors": [
+    "Suryadeep Pal"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/techpool/incubation_skfgi",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
