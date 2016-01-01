@@ -14,6 +14,7 @@ Event = require('./models/events.js');
 
 require('./routes/registration/studentRegister.js')(app);
 require('./routes/registration/login.js')(app);
+require('./routes/events/events.js')(app);
 
 /* Routes for events */
 

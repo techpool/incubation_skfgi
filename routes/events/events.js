@@ -1,21 +1,21 @@
 module.exports = function(app) {
 
-    app.post('/postevent', function (req, res) {
-        var sendData = 'Thanks for registering with us';
+    app.post('/events', function (req, res) {
+        var sendData = 'The event has been added to the database';
 
-        var evt = new Event({
+        var newEvent = new Event({
             name: req.body.name,
-            wbutRoll: req.body.roll,
-            email: req.body.email,
-            password: req.body.password,
-            regYear: req.body.regYear,
-            department: req.body.department
+            type: req.body.type,
+            details: req.body.details,
+            caption: req.body.caption,
+            department: req.body.department,
+            time: req.body.time
         });
 
-        std.save(function (err) {
+        newEvent.save(function (err) {
             if (err) {
                 if (err.code == 11000) {
-                    sendData = 'You are already registered';
+                    sendData = 'An event is already registered on this date';
                     res.send(sendData)
                 }
                 console.log(err);
@@ -23,7 +23,6 @@ module.exports = function(app) {
                 res.send(sendData);
             }
         });
-
     });
 
 };
