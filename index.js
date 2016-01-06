@@ -8,7 +8,7 @@ require('./config/configuration.js')(app);
 
 /* Models */
 Student = require('./models/studentDetails.js');
-Event = require('./models/Events.js');
+Events = require('./models/Events.js');
 Admin = require('./models/Admin.js');
 
 /* Routes for registration */
