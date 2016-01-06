@@ -14,10 +14,23 @@ module.exports = function (app) {
     })
 
     app.get('/dashboard', function (req, res) {
-        console.log(req.session);
-        // res.cookie('email', 'suryadeep10@gmail.com', { maxAge: 900000, httpOnly: true });
-        // console.log(req.session);
-        res.render('dashboard');
+        Student.findOne({
+            email: req.session.email
+        }).exec(function (err, studentData) {
+            if (studentData) {
+                var jsonToSend = {
+                    username: studentData.name,
+                    email: studentData.email,
+                    department: studentData.department,
+                    regYear: studentData.regYear,
+                    roll: studentData.roll
+                }
+                res.locals.studentData = jsonToSend;
+                res.render('dashboard');
+            } else {
+                res.render('index');
+            }
+        });
     });
 
     app.post('/login', function (req, res) {

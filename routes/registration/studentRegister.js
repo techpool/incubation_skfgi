@@ -4,11 +4,12 @@ module.exports = function(app) {
     });
 
     app.post('/register', function (req, res) {
+        console.log(req.body);
         var sendData = 'Thanks for registering with us';
 
         var std = new Student({
             name: req.body.name,
-            wbutRoll: req.body.roll,
+            roll: req.body.roll,
             email: req.body.email,
             password: req.body.password,
             regYear: req.body.regYear,
