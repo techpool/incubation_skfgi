@@ -26,7 +26,7 @@ module.exports = function (app) {
     app.set('view engine', 'jade');
 
     //DB connection
-    app.set('db', 'mongodb://localhost/incubation')
+    app.set('db', 'mongodb://localhost:27017/incubation')
 
     //Connecting the DB
     mongoose.connect(app.get('db'));
