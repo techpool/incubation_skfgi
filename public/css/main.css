@@ -12,6 +12,15 @@ body{
   margin: 0px
 }
 
+.profile_picture{
+    padding-top: 20px;
+}
+
 .parallax-container {
       height: 100vh;
+}
+
+li{
+    margin: 0px;
+    padding: 0px;
 }
