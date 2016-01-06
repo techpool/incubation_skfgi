@@ -2,10 +2,10 @@ doctype html
 html
 	head
 		meta(charset='UTF-8')
-		title I N C U B A T I O N
-		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css')
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js')
+		title  Register | I N C U B A T I O N
+		link(rel='stylesheet', href='/bower_components/Materialize/bin/materialize.css')
+		script(src='/bower_components/jquery/dist/jquery.min.js')
+		script(src='/bower_components/Materialize/bin/materialize.js')
 		link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
 		link(rel='stylesheet', type='text/css', href='css/register.css')
 		script(type='text/javascript').
@@ -49,7 +49,7 @@ html
 							label Department/Section
 						.input-field.col.s12
 							input#makautroll.validate(type='number', autocomplete='off', name='roll', min=0)
-							label(for='makautroll') M.K.A.U.T. Roll No.
+							label(for='makautroll') M.A.K.A.U.T. Roll No.
 						.input-field.col.s12
 							input#year.validate(type='number', min='1', max='4', autocomplete='off', name='year')
 							label(for='year') Current Year

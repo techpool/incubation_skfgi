@@ -1,12 +1,54 @@
 doctype html
 html
-  head
-    meta(charset='UTF-8')
-    title I N C U B A T I O N
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js')
-    link(rel='stylesheet', type='text/css', href='css/main.css')
-  body
-    #navbar
-    script(src='reactScript/bundle.js')
+	head
+		meta(charset='UTF-8')
+		title I N C U B A T I O N
+		link(rel='stylesheet', href='/bower_components/Materialize/bin/materialize.css')
+		script(src='/bower_components/jquery/dist/jquery.min.js')
+		script(src='/bower_components/Materialize/bin/materialize.js')
+		link(rel='stylesheet', type='text/css', href='css/main.css')
+		script(type='text/javascript').
+			$(document).ready(function(){
+				$('.button-collapse').sideNav({
+					menuWidth: 300, // Default is 240
+					edge: 'right', // Choose the horizontal origin
+					closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+					}
+				);
+			});
+
+	body
+		ul#slide-out.side-nav.fixed
+			li
+				.row.valign-wrapper.profile_picture
+					.col.s3
+					.col.s6
+						img.circle.responsive-img(src='http://1.bp.blogspot.com/_Mt4qyhflsHY/S8wCjflidQI/AAAAAAAAAhI/FiTJiysCYus/s1600/gravatar.jpg', alt='')
+					.col.s3
+			li
+				.row
+					.col.s4
+						span.label Name:
+					.col.s8
+						span.result #{studentData.username}
+			li
+				.row
+					.col.s4
+						span.label Email:
+					.col.s8
+						span.result #{studentData.email}
+			li
+				.row
+					.col.s4
+						span.label Department:
+					.col.s8
+						span.result #{studentData.department}
+			li
+				.row
+					.col.s4
+						span.label Roll:
+					.col.s8
+						span.result #{studentData.roll}
+
+		a.button-collapse(href='#', data-activates='slide-out')
+			i.mdi-navigation-menu
