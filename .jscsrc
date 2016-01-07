@@ -1,0 +1,31 @@
+{
+    "preset": "jquery",
+    "requireSpacesInsideParentheses": false,
+    "validateQuoteMarks": "'",
+    "requireCapitalizedComments": false,
+    "requireSpaceBeforeBlockStatements": false,
+    "requireSpacesInFunctionExpression": false,
+    "requireSpacesInAnonymousFunctionExpression": false,
+    "maximumLineLength": false,
+    "requireSpacesInsideObjectBrackets": {
+        "allExcept": [ "}", ")" ]
+    },
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+    "requireSpaceAfterKeywords": [
+        "switch",
+        "case",
+        "try",
+        "catch",
+        "void",
+        "with",
+        "return",
+        "typeof"
+    ],
+    "validateIndentation": 4,
+    "disallowMultipleSpaces": true,
+    "disallowKeywordsOnNewLine": [],
+    "excludeFiles": ["public/**", "views/**"],
+    "maxErrors": "1000",
+    "requireSpacesInNamedFunctionExpression": false,
+    "requirePaddingNewLinesBeforeLineComments": false
+}

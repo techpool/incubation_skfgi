@@ -1,9 +1,9 @@
 module.exports = function(app) {
 
-    app.post('/events', function (req, res) {
+    app.post('/events', function(req, res) {
         Admin.findOne({
             email: req.session.email
-        }).exec(function (err, adminData) {
+        }).exec(function(err, adminData) {
             if (adminData) {
                 var sendData = 'The event has been added to the database';
 
@@ -16,11 +16,11 @@ module.exports = function(app) {
                     time: req.body.time
                 });
 
-                newEvent.save(function (err) {
+                newEvent.save(function(err) {
                     if (err) {
                         if (err.code == 11000) {
                             sendData = 'An event is already registered on this date';
-                            res.send(sendData)
+                            res.send(sendData);
                         }
                         console.log(err);
                     } else {

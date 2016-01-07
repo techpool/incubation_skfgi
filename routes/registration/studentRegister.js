@@ -3,7 +3,7 @@ module.exports = function(app) {
         res.render('register');
     });
 
-    app.post('/register', function (req, res) {
+    app.post('/register', function(req, res) {
         console.log(req.body);
         var sendData = 'Thanks for registering with us';
 
@@ -16,7 +16,7 @@ module.exports = function(app) {
             department: req.body.department
         });
 
-        std.save(function (err) {
+        std.save(function(err) {
             if (err) {
                 if (err.code == 11000) {
                     sendData = 'You are already registered';

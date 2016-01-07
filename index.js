@@ -21,6 +21,6 @@ require('./routes/events/events.js')(app);
 
 require('./routes/events/events.js')(app);
 
-app.listen(8000, function () {
+app.listen(8000, function() {
     console.log('Server started at port 8000');
 });

@@ -29,7 +29,7 @@ var studentDetails = new Schema({
         required: true
     },
     sessions: {
-        type: [String]
+        type: [ String ]
     }
 });
 

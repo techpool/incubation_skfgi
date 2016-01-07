@@ -16,7 +16,7 @@ var admin = new Schema({
         required: true
     },
     sessions: {
-        type: [String]
+        type: [ String ]
     }
 });
 

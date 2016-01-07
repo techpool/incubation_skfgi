@@ -12,7 +12,7 @@ var events = new Schema({
     },
     details: {
         type: String,
-        required: true,
+        required: true
     },
     caption: {
         type: String,
