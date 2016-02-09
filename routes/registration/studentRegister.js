@@ -7,13 +7,17 @@ module.exports = function(app) {
         console.log(req.body);
         var sendData = 'Thanks for registering with us';
 
+        var dateObj = new Date();
+        var currentYear = dateObj.getFullYear();
+        var regYear = currentYear - req.body.year;
+
         var std = new Student({
             name: req.body.name,
             roll: req.body.roll,
             email: req.body.email,
             password: req.body.password,
-            regYear: req.body.regYear,
-            department: req.body.department
+            regYear: regYear,
+            department: req.body.dept
         });
 
         std.save(function(err) {

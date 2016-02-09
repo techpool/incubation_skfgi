@@ -17,30 +17,6 @@ module.exports = function(app) {
         });
     });
 
-    //route to render the dashboard, only for students
-    app.get('/dashboard', function(req, res) {
-        Student.findOne({
-            email: req.session.email
-        }).exec(function(err, studentData) {
-            if (studentData) {
-
-                //setting up the variables to pass on to JADE template
-                var jsonToSend = {
-                    username: studentData.name,
-                    email: studentData.email,
-                    department: studentData.department,
-                    regYear: studentData.regYear,
-                    roll: studentData.roll
-                };
-                res.locals.studentData = jsonToSend;
-                res.render('dashboard');
-            } else {
-                //if the user's session does not exists then redirect to the login page
-                res.redirect('/');
-            }
-        });
-    });
-
     //route for signing in(only for students)
     app.post('/login', function(req, res) {
         var credential = req.body;
@@ -64,7 +40,7 @@ module.exports = function(app) {
     });
 
     //route for signing in(only for admins)
-    app.post('/login', function(req, res) {
+    app.post('/adminlogin', function(req, res) {
         var credential = req.body;
         console.log(credential.email);
         Admin.findOne({
@@ -76,10 +52,9 @@ module.exports = function(app) {
                 res.sendStatus(400);
             } else {
                 if (studentData.password == credential.password) {
-                    req.session.email = studentData.email;
-                    res.sendStatus(200);
+                    res.redirect('/manage');
                 } else {
-                    res.sendStatus(401);
+                    res.redirect('/')
                 }
             }
         });

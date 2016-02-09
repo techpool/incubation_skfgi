@@ -18,37 +18,29 @@ html
 			});
 
 	body
-		ul#slide-out.side-nav.fixed
-			li
-				.row.valign-wrapper.profile_picture
-					.col.s3
-					.col.s6
-						img.circle.responsive-img(src='http://1.bp.blogspot.com/_Mt4qyhflsHY/S8wCjflidQI/AAAAAAAAAhI/FiTJiysCYus/s1600/gravatar.jpg', alt='')
-					.col.s3
-			li
-				.row
-					.col.s4
-						span.label Name:
-					.col.s8
-						span.result #{studentData.username}
-			li
-				.row
-					.col.s4
-						span.label Email:
-					.col.s8
-						span.result #{studentData.email}
-			li
-				.row
-					.col.s4
-						span.label Department:
-					.col.s8
-						span.result #{studentData.department}
-			li
-				.row
-					.col.s4
-						span.label Roll:
-					.col.s8
-						span.result #{studentData.roll}
-
-		a.button-collapse(href='#', data-activates='slide-out')
-			i.mdi-navigation-menu
+		.row
+			.col.s12
+				ul.tabs
+					li.tab.col.s3
+						a(href='#test1') Manual Robotics
+					li.tab.col.s3
+						a(href='#test2') Autonomous Robotics
+					li.tab.col.s3
+						a(href='#test3') Coding
+					li.tab.col.s3
+						a(href='#test4') Bridge Building
+			#test1.col.s12
+				each event in events
+					.row
+						.col.s12
+							.card.small
+								.card-image
+									img(src=event.fullImage)
+									span.card-title #{event.name}
+								.card-content
+									p= event.caption
+								.card-action
+									a(href='#') This is a link
+			#test2.col.s12 Test 2
+			#test3.col.s12 Test 3
+			#test4.col.s12 Test 4

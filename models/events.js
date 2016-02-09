@@ -30,8 +30,8 @@ var events = new Schema({
         type:String,
         required: true
     },
-    time:{
-        type:String,
+    dates:{
+        type: [Number],
         required: true,
         unique: true
     }

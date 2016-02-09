@@ -15,11 +15,14 @@ Admin = require('./models/Admin.js');
 
 require('./routes/registration/studentRegister.js')(app);
 require('./routes/registration/login.js')(app);
-require('./routes/events/events.js')(app);
 
 /* Routes for events */
 
 require('./routes/events/events.js')(app);
+
+/* Route for dashboard */
+
+require('./routes/dashboard/dashboard.js')(app);
 
 app.listen(8000, function() {
     console.log('Server started at port 8000');
